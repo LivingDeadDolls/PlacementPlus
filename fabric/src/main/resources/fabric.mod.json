@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}+${minecraft_version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "contact": {
+        "sources": "https://github.com/LivingDeadDolls/PlacementPlus",
+        "issues": "https://github.com/LivingDeadDolls/PlacementPlus/issues"
+    },
+    "license": "${license}",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "placementplus.PlacementPlusFabric"
+        ],
+        "modmenu": [
+            "placementplus.ModMenuIntegration"
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": "*",
+        "yet_another_config_lib_v3": "*",
+        "minecraft": "${fabric_minecraft_dependency}",
+        "java": ">=${java_version}"
+    },
+    "suggests": {
+        "modmenu": "*"
+    }
+}
