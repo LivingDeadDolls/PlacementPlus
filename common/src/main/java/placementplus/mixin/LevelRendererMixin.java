@@ -2,7 +2,7 @@ package placementplus.mixin;
 
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.extract.LevelExtractor;
+import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.state.level.BlockOutlineRenderState;
 import net.minecraft.client.renderer.state.level.LevelRenderState;
 import net.minecraft.core.BlockPos;
@@ -13,9 +13,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import placementplus.Preview;
 
-@Mixin(LevelExtractor.class)
-abstract class LevelExtractorMixin {
-    /** Placement Preview: moves the block outline to where the block will go, after vanilla has worked it out. */
+@Mixin(LevelRenderer.class)
+abstract class LevelRendererMixin {
+    /**
+     * Placement Preview: moves the block outline to where the block will go, after vanilla has worked it out.
+     * On 26.1 the outline is extracted in LevelRenderer (26.2 moved it to LevelExtractor).
+     */
     @Inject(method = "extractBlockOutline", at = @At("RETURN"))
     private void placementplus$preview(Camera camera, LevelRenderState state, CallbackInfo ci) {
         Minecraft minecraft = Minecraft.getInstance();

@@ -137,7 +137,7 @@ public final class ServerLook {
             acknowledged = -1;
             return;
         }
-        if (minecraft.gui.screen() != null) {
+        if (minecraft.screen != null) {
             // Not now: a screen took over.
             heldBack.clear();
         }

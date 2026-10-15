@@ -127,7 +127,7 @@ public final class FastPlacement {
 
     /** Called each time vanilla works out the crosshair target, which is every frame. */
     public static void afterPick(Minecraft minecraft, Runnable startUseItem) {
-        if (placing || firstSide == null || !isActive(minecraft) || minecraft.gui.screen() != null) {
+        if (placing || firstSide == null || !isActive(minecraft) || minecraft.screen != null) {
             return;
         }
         Target target = target(minecraft);

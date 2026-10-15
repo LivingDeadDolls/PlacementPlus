@@ -7,7 +7,7 @@
   "client": [
     "ClientLevelAccessor",
     "ClientLevelMixin",
-    "LevelExtractorMixin",
+    "LevelRendererMixin",
     "LocalPlayerMixin",
     "MinecraftMixin"
   ],
